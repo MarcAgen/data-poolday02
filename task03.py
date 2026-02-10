@@ -19,7 +19,7 @@ class Athlete:
             self._records[championship_name] = rank
 
     def print(self):
-        print(f"My name is {self._name}, from {self._country}.\nMy birth date is {self.birthdate}.")
+        print(f"My name is {self._name}, from {self._country}.\nMy birth date is {self._birthdate}.")
         if not self._records:
             return
         print("My records are:")
