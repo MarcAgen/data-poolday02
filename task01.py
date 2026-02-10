@@ -26,7 +26,3 @@ class Athlete:
         print("My records are:")
         for i in self.records.keys():
             print(f"Rank {self.records[i]} at the {i}")
-
-mkleo = Athlete("mkleo", "Mexico", "20/01/2001")
-mkleo.add_record("lets make big moves", 7)
-mkleo.print()
