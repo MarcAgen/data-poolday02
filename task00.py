@@ -34,5 +34,3 @@ def getSecondMax(numbers:list[int | float]):
         if i < max and i > second_max:
             second_max = i
     return second_max
-
-print(f"{getSecondMax([])}")
