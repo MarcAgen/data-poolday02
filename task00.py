@@ -5,21 +5,23 @@
 ## task00
 ##
 
-def multiply(a, b):
+def multiply(a:int | float, b:int | float):
     return a * b
 
-def multiply2(x):
+def multiply2(x:int | float):
     return x * 2
 
-def multiply10(x):
+def multiply10(x:int | float):
     return x * 10
 
-def getSecondMax(numbers):
+def getSecondMax(numbers:list[int | float]):
     max = numbers[0]
-    second_max:int
+    second_max:int | float
 
+    if not numbers:
+        raise ValueError
     if all(x == numbers[0] for x in numbers):
-        return numbers[0]
+        raise ValueError
 
     for i in numbers:
         if i > max:
@@ -32,3 +34,5 @@ def getSecondMax(numbers):
         if i < max and i > second_max:
             second_max = i
     return second_max
+
+print(f"{getSecondMax([])}")

@@ -50,7 +50,7 @@ class TestGetSecondMax(test.TestCase):
         self.assertEqual(getSecondMax([5.5, 5.5, 2.5]), 2.5)
 
     def test_getSecondMax_all_same_float(self):
-        self.assertEqual(getSecondMax([5.4, 5.4, 5.4]), 5.4)
+        self.assertEqual(getSecondMax([5.4, 5.4, 5.4]), ValueError)
 
 
 if __name__ == " __main__ " :
