@@ -10,8 +10,7 @@ class Athlete:
         self.name:str = name
         self.country:str = country
         self.birthdate:str = birthdate
-        self.records:dict
-    
+        self.records:dict = {}
 
     def add_record(self, championship_name:str, rank:int)->None:
         if (not championship_name or rank < 1):
@@ -27,3 +26,7 @@ class Athlete:
         print("My records are:")
         for i in self.records.keys():
             print(f"Rank {self.records[i]} at the {i}")
+
+mkleo = Athlete("mkleo", "Mexico", "20/01/2001")
+mkleo.add_record("lets make big moves", 7)
+mkleo.print()
