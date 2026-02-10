@@ -54,23 +54,3 @@ class Competition:
             print(f"{len(self.athletes)} athlete(s)engaged in the {self.name}:")
             for i in sorted(self.athletes, key=lambda x: x._name, reverse=False):
                 print(f"{i._name} ({i._birthdate})from {i._country}")
-
-mkleo = Athlete("mkleo", "Mexico", "2O/01/2001")
-hurt = Athlete("hurt", "Mexico", "2O/01/2001")
-#crepesale = Athlete("crepesalee", "Mexico", "2O/01/2001")
-compet = Competition("SmashMania")
-compet.add_athlete(mkleo)
-compet.add_athlete(hurt)
-#compet.add_athlete(crepesale)
-compet.rank(hurt, 1)
-compet.rank(mkleo, 2)
-#compet.rank(crepesale, 3)
-#print("--------------------------------------------------------------------")
-#compet.print()
-#print("--------------------------------------------------------------------")
-#for i in compet.athletes:
-#    print(i._name)
-#    print(i._records.keys())
-#print("--------------------------------------------------------------------")
-compet.get_ranking()
-#
