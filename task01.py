@@ -29,6 +29,6 @@ class Athlete:
 
 mkleo = Athlete("Bobby Bob", "Bolivia", "1998-09-09")
 mkleo.print()
-mkleo.add_record("2020 La Paz Championship", 2)
+mkleo.add_record("2022 Sv Paz Championship", 2)
 mkleo.add_record("2021 Sucre Championship", 3)
 mkleo.print()
