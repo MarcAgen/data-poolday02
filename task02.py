@@ -11,7 +11,7 @@ class Athlete:
         self._country:str = country
         self._birthdate:str = birthdate
         self._records:list[dict[str, int]]
-    
+
 
     def add_record(self, championship_name:str, rank:int)->None:
         if (not championship_name or rank < 1):
