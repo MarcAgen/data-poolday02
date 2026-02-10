@@ -41,3 +41,6 @@ class TestAthlete(test.TestCase):
         athlete.add_record("lets make big moves", 5)
         athlete.add_record("Ragnarok: Origin", 1)
         athlete.print()
+
+if __name__ == " __main__ " :
+    test.main()
