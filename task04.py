@@ -9,7 +9,7 @@ from task03 import Athlete
 class Competition:
     def __init__(self, name:str)->None:
         self.name:str = name
-        self.athletes:list[Athlete]
+        self.athletes:list[Athlete] = []
 
     def add_athlete(self, athlete:Athlete)->None:
         if not isinstance(athlete, Athlete):
