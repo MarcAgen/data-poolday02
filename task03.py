@@ -10,27 +10,22 @@ class Athlete:
         self._name:str = name
         self._country:str = country
         self._birthdate:str = birthdate
-        self._records:list[dict[str, int]]
-    
+        self._records:dict
 
     def add_record(self, championship_name:str, rank:int)->None:
         if (not championship_name or rank < 1):
             raise ValueError
-        for i in self._records:
-            if (i["championship name"] == championship_name):
-                i["rank"] = rank
-                return
-        self._records.append({"championship name": championship_name, "rank": rank})
-
+        if (championship_name not in self._records.keys()):
+            self._records[championship_name] = rank
 
     def print(self):
-        print(f"My name is {self._name}, from {self._country}.\nMy birth date is {self._birthdate}.")
+        print(f"My name is {self._name}, from {self._country}.\nMy birth date is {self.birthdate}.")
         if not self._records:
             return
         print("My records are:")
-        for i in self._records:
-            print(f"Rank {i["rank"]} at the {i["championship name"]}")
-    
+        for i in self._records.keys():
+            print(f"Rank {self._records[i]} at the {i}")
+
     def setName(self, new_name:str):
         if not new_name:
             raise ValueError

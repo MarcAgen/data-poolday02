@@ -18,14 +18,14 @@ class TestAthlete(test.TestCase):
     def test_record_adding(self):
         athlete = Athlete("mkleo", "Mexico", "2O/01/2001")
         athlete.add_record("lets make big moves", 5)
-        self.assertEqual(athlete.records[0]["championship name"], "lets make big moves")
-        self.assertEqual(athlete.records[0]["rank"], 5)
+        self.assertEqual(athlete.records.keys()[0], "lets make big moves")
+        self.assertEqual(athlete.records["lets make big moves"], 5)
     
     def test_record_overwrite(self):
         athlete = Athlete("mkleo", "Mexico", "2O/01/2001")
         athlete.add_record("lets make big moves", 5)
         athlete.add_record("lets make big moves", 1)
-        self.assertEqual(athlete.records[0]["rank"], 1)
+        self.assertEqual(athlete.records["lets make big moves"], 1)
     
     def test_print_no_record(self):
         athlete = Athlete("mkleo", "Mexico", "2O/01/2001")
