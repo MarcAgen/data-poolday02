@@ -29,8 +29,10 @@ class Competition:
         if rank < 1:
             raise ValueError
         for i in self.athletes:
-            if i._name == athlete.name:
+            if i._name == athlete._name:
                 athlete.add_record(self.name, rank)
+                return
+        
         raise ValueError
 
     def print(self)->None:

@@ -29,13 +29,15 @@ class Competition:
         if rank < 1:
             raise ValueError
         for i in self.athletes:
-            if i._name == athlete.name:
+            if i._name == athlete._name:
                 athlete.add_record(self.name, rank)
+                return
         raise ValueError
     
     def get_ranking(self):
         lst:list[Athlete] = []
     
+        
         for i in self.athletes:
             if i._records[self.name]:
                 lst.append(i)
@@ -43,7 +45,7 @@ class Competition:
             print(f"The {self.name} has no ranking yet.")
             return
         for i in sorted(lst, key=lambda x: x._records[self.name], reverse=False):
-            print(f"Rank {i._records[self.name]}: {i.name} from {i._country} ({i._birthdate})")
+            print(f"Rank {i._records[self.name]}: {i._name} from {i._country} ({i._birthdate})")
 
     def print(self)->None:
         if not self.athletes:
@@ -52,3 +54,23 @@ class Competition:
             print(f"{len(self.athletes)} athlete(s)engaged in the {self.name}:")
             for i in sorted(self.athletes, key=lambda x: x._name, reverse=False):
                 print(f"{i._name} ({i._birthdate})from {i._country}")
+
+mkleo = Athlete("mkleo", "Mexico", "2O/01/2001")
+hurt = Athlete("hurt", "Mexico", "2O/01/2001")
+#crepesale = Athlete("crepesalee", "Mexico", "2O/01/2001")
+compet = Competition("SmashMania")
+compet.add_athlete(mkleo)
+compet.add_athlete(hurt)
+#compet.add_athlete(crepesale)
+compet.rank(hurt, 1)
+compet.rank(mkleo, 2)
+#compet.rank(crepesale, 3)
+#print("--------------------------------------------------------------------")
+#compet.print()
+#print("--------------------------------------------------------------------")
+#for i in compet.athletes:
+#    print(i._name)
+#    print(i._records.keys())
+#print("--------------------------------------------------------------------")
+compet.get_ranking()
+#
