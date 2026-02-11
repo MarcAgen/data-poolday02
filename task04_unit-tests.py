@@ -32,4 +32,4 @@ class TestCompetition(test.TestCase):
         compet = Competition("SmashMania")
         compet.add_athlete(mkleo)
         compet.rank(mkleo, 7)
-        self.assertEqual(mkleo._records[0]["rank"], 7)
+        self.assertEqual(mkleo._records["SmashMania"], 7)
