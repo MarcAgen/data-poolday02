@@ -24,7 +24,7 @@ class Competition:
             if self.athletes[i] == athlete._name:
                 self.athletes.remove(athlete)
 
-    
+
     def rank(self, athlete:Athlete, rank:int)->None:
         if rank < 1:
             raise ValueError
