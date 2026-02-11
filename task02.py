@@ -23,5 +23,5 @@ class Athlete:
         if not self._records:
             return
         print("My records are:")
-        for i in self._records.keys():
+        for i in sorted(self._records.keys()):
             print(f"Rank {self._records[i]} at the {i}")
